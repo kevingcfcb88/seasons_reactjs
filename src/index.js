@@ -1,11 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import SeasonDisplay from "./SeasonDisplay";
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { lat: null, errorMessage: "" };
-  }
+  state = { lat: null, errorMessage: "" };
 
   componentDidMount() {
     //Getting the location of the user
@@ -16,11 +14,12 @@ class App extends React.Component {
   }
 
   render() {
-    return (
+    /*return (
       <div>
         Latitude: {this.state.errorMessage || this.state.lat || "Loading..."}
       </div>
-    );
+    );*/
+    return <SeasonDisplay lat={this.state.lat} />;
   }
 }
 
